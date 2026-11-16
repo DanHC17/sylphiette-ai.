@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17251f">
+  <meta name="description" content="Sylphiette AI — prototipo conversacional con memoria local.">
+  <title>Sylphiette AI</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="avatar" aria-hidden="true">S</div>
+      <div class="identity">
+        <h1>Sylphiette</h1>
+        <p><span class="status-dot"></span> Prototipo local</p>
+      </div>
+      <button id="memoryButton" class="icon-button" aria-label="Abrir recuerdos" title="Recuerdos">♡</button>
+    </header>
+
+    <section class="notice" id="demoNotice">
+      <strong>Versión 0.1 · Modo demostración</strong>
+      <span>Las respuestas todavía no usan un modelo de IA. Tus conversaciones y recuerdos se guardan en este dispositivo.</span>
+    </section>
+
+    <section id="chat" class="chat" aria-live="polite" aria-label="Conversación">
+      <article class="message assistant">
+        <div class="bubble">
+          ¡Hola! Me alegra que estés aquí. Todavía estoy aprendiendo a conversar, pero podemos empezar poco a poco. ¿Cómo ha ido tu día?
+        </div>
+        <time>Ahora</time>
+      </article>
+    </section>
+
+    <form id="composer" class="composer">
+      <textarea id="messageInput" rows="1" maxlength="2000" placeholder="Escribe un mensaje..." aria-label="Escribe un mensaje"></textarea>
+      <button id="sendButton" type="submit" aria-label="Enviar mensaje">➤</button>
+    </form>
+    <footer class="footer">Sylphiette AI · Los datos permanecen en este dispositivo</footer>
+  </main>
+
+  <dialog id="memoryDialog" class="dialog">
+    <form method="dialog" class="dialog-head">
+      <div>
+        <h2>Recuerdos de Sylphiette</h2>
+        <p>Agrega datos que quieras que recuerde en este dispositivo.</p>
+      </div>
+      <button class="close-button" aria-label="Cerrar">×</button>
+    </form>
+    <form id="memoryForm" class="memory-form">
+      <label for="memoryInput">Nuevo recuerdo</label>
+      <textarea id="memoryInput" rows="3" maxlength="500" placeholder="Ej. Me gusta escuchar música instrumental." required></textarea>
+      <button type="submit" class="primary-button">Guardar recuerdo</button>
+    </form>
+    <div id="memoryList" class="memory-list"></div>
+    <button id="clearDataButton" class="danger-button" type="button">Borrar todos los datos locales</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

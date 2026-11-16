@@ -1,0 +1,19 @@
+{
+  "name": "Sylphiette AI",
+  "short_name": "Sylphiette",
+  "description": "Prototipo conversacional de Sylphiette con memoria local.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101914",
+  "theme_color": "#17251f",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
